@@ -1,0 +1,939 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExcelPath - Complete Excel Learning Hub</title>
+
+<style>
+:root {
+  --green:#16834a;
+  --green2:#20a464;
+  --bg:#f5f8f6;
+  --card:#ffffff;
+  --text:#18251e;
+  --muted:#66756c;
+  --border:#dce7df;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+header{
+  background:#10251b;
+  color:white;
+  padding:17px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.logo{font-size:25px;font-weight:bold;color:#56d58d}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#56d58d}
+button{
+  cursor:pointer;
+  border:0;
+  border-radius:7px;
+  padding:10px 16px;
+  font-weight:bold;
+}
+.primary{background:var(--green);color:white}
+.primary:hover{background:var(--green2)}
+.secondary{background:#e5f5eb;color:#12683b}
+.container{max-width:1200px;margin:auto;padding:30px 20px}
+.hero{
+  background:linear-gradient(120deg,#103b26,#16834a);
+  color:white;
+  padding:65px 8%;
+  border-radius:18px;
+  margin-bottom:35px;
+}
+.hero h1{font-size:42px;line-height:1.2;margin-bottom:15px}
+.hero p{max-width:650px;color:#e2f5e9;margin-bottom:22px}
+.hero .primary{background:white;color:#12683b}
+.section{margin:40px 0}
+.section h2{font-size:27px;margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:20px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:17px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 3px 12px #00000008;
+}
+.card h3{margin-bottom:8px;color:var(--green)}
+.card p{color:var(--muted);font-size:14px}
+.card button{margin-top:14px}
+.panel{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:22px;
+  margin-top:15px;
+}
+input,select,textarea{
+  padding:11px;
+  border:1px solid #bdcfc2;
+  border-radius:7px;
+  font:inherit;
+  max-width:100%;
+}
+.search{width:100%;margin:10px 0 18px}
+.lesson-content{white-space:pre-wrap}
+.lesson-content h3{color:var(--green);margin:15px 0 5px}
+.formula-item{
+  padding:13px;
+  border-bottom:1px solid var(--border);
+}
+.formula-item code{
+  background:#e9f5ed;
+  color:#12683b;
+  padding:4px 7px;
+  border-radius:5px;
+}
+.formula-item p{font-size:14px;color:var(--muted);margin-top:6px}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:500px}
+td,th{border:1px solid #d5e0d8;padding:8px;text-align:left}
+th{background:#e7f3eb}
+td input{width:100%;border:0;padding:7px;background:transparent}
+.sheet-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.result{margin-top:12px;font-weight:bold;color:var(--green)}
+.quiz-option{
+  display:block;
+  padding:10px;
+  margin:8px 0;
+  border:1px solid var(--border);
+  border-radius:7px;
+  cursor:pointer;
+}
+.quiz-option:hover{background:#edf8f0}
+.question{margin:20px 0}
+footer{
+  background:#10251b;
+  color:white;
+  padding:30px 20px;
+  text-align:center;
+  margin-top:50px;
+}
+footer p{color:#c7d7cc}
+.badge{
+  display:inline-block;
+  background:#e4f5e9;
+  color:#12683b;
+  padding:4px 9px;
+  border-radius:20px;
+  font-size:12px;
+  margin-bottom:8px;
+}
+.dark{
+  --bg:#111a15;
+  --card:#1b2921;
+  --text:#e9f3ec;
+  --muted:#b0c1b5;
+  --border:#34483a;
+}
+.dark th{background:#263b2d}
+.dark .formula-item code{background:#263b2d;color:#8ce5ae}
+.dark input,.dark select,.dark textarea{
+  background:#26352b;color:white;border-color:#52685a;
+}
+.dark .secondary{background:#294c36;color:#b5f3ca}
+.dark .quiz-option:hover{background:#263b2d}
+@media(max-width:650px){
+  header{position:static}
+  nav{gap:12px}
+  .hero{padding:40px 23px}
+  .hero h1{font-size:32px}
+  .container{padding:20px 14px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">📊 ExcelPath</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#formulas">Formulas</a>
+    <a href="#practice">Practice</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#interview">Interview</a>
+  </nav>
+  <button class="secondary" onclick="toggleDark()">🌙 Theme</button>
+</header>
+
+<main class="container">
+
+<section class="hero" id="home">
+  <span class="badge">YOUR COMPLETE EXCEL LEARNING HUB</span>
+  <h1>Learn Excel.<br>Practice Excel.<br>Master Excel.</h1>
+  <p>
+    Learn Microsoft Excel from beginner to advanced level.
+    Explore formulas, data analysis, dashboards, automation
+    and interview preparation with practical examples.
+  </p>
+  <button class="primary" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+    Start Learning →
+  </button>
+</section>
+
+<section class="section" id="courses">
+  <h2>Explore Excel Learning Paths</h2>
+  <p class="sub">Choose a topic and start learning step by step.</p>
+  <div class="grid" id="courseGrid"></div>
+  <div class="panel" id="lessonPanel" style="display:none">
+    <button class="secondary" onclick="closeLesson()">← Back to courses</button>
+    <div id="lessonContent" class="lesson-content"></div>
+  </div>
+</section>
+
+<section class="section" id="formulas">
+  <h2>Excel Formula Library</h2>
+  <p class="sub">Search formulas and understand their syntax and uses.</p>
+  <input class="search" id="formulaSearch" placeholder="Search formula: SUM, IF, VLOOKUP..." oninput="renderFormulas()">
+  <div class="panel" id="formulaList"></div>
+</section>
+
+<section class="section" id="practice">
+  <h2>Interactive Excel Practice</h2>
+  <p class="sub">
+    Enter values in the cells and try formulas. This is a learning
+    simulator, not a full Microsoft Excel application.
+  </p>
+  <div class="panel">
+    <div class="sheet-toolbar">
+      <input id="formulaInput" placeholder="Example: =SUM(A1:A5)" style="flex:1">
+      <button class="primary" onclick="calculateFormula()">Calculate</button>
+      <button class="secondary" onclick="resetSheet()">Reset sheet</button>
+    </div>
+    <div class="table-wrap">
+      <table id="sheet">
+        <thead>
+          <tr><th></th><th>A</th><th>B</th><th>C</th></tr>
+        </thead>
+        <tbody id="sheetBody"></tbody>
+      </table>
+    </div>
+    <div class="result" id="formulaResult">Result will appear here.</div>
+    <p class="sub" style="margin-top:12px">
+      Supported examples: =SUM(A1:A5), =AVERAGE(B1:B5),
+      =COUNT(A1:A5), =MIN(A1:A5), =MAX(A1:A5), =A1+B1
+    </p>
+  </div>
+</section>
+
+<section class="section" id="quiz">
+  <h2>Test Your Excel Knowledge</h2>
+  <p class="sub">Answer the questions and check your score.</p>
+  <div class="panel" id="quizArea"></div>
+</section>
+
+<section class="section" id="interview">
+  <h2>Excel Interview Preparation</h2>
+  <p class="sub">Prepare for Excel interviews with common questions.</p>
+  <div class="panel" id="interviewArea"></div>
+</section>
+
+<section class="section" id="datasets">
+  <h2>Practice Datasets</h2>
+  <p class="sub">Download sample data to practise Excel formulas and reporting.</p>
+  <div class="card">
+    <h3>Sales Practice Dataset</h3>
+    <p>Includes employee names, products, quantities, prices and sales amounts.</p>
+    <button class="primary" onclick="downloadDataset()">⬇ Download CSV Dataset</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <h2>ExcelPath</h2>
+  <p>Learn Excel from Basics to Advanced.</p>
+  <p>© 2026 ExcelPath. Built for Excel learners.</p>
+</footer>
+
+<script>
+// ===============================
+// 1. EXCEL LEARNING CATEGORIES
+// ===============================
+
+const courses = [
+{
+title:"Excel Basics",
+level:"Beginner",
+desc:"Learn the Excel interface, formatting, shortcuts and data entry.",
+content:`EXCEL BASICS
+
+1. Understanding Excel
+Microsoft Excel is a spreadsheet application used to store, organise,
+calculate and analyse data.
+
+2. Workbook and Worksheet
+A workbook is an Excel file. A worksheet is an individual sheet
+inside that workbook.
+
+3. Rows and Columns
+Rows are horizontal and identified by numbers.
+Columns are vertical and identified by letters.
+
+4. Cells
+A cell is the intersection of a row and a column.
+Example: A1, B2 and C10.
+
+5. Basic Formatting
+You can change font, colour, borders, alignment and number formats.
+
+6. Useful Shortcuts
+Ctrl + C = Copy
+Ctrl + V = Paste
+Ctrl + X = Cut
+Ctrl + Z = Undo
+Ctrl + S = Save
+Ctrl + F = Find
+Ctrl + A = Select all
+Ctrl + B = Bold`
+},
+{
+title:"Basic Formulas",
+level:"Beginner",
+desc:"Learn SUM, AVERAGE, COUNT, MIN and MAX.",
+content:`BASIC EXCEL FORMULAS
+
+SUM
+Adds numbers.
+Example: =SUM(A1:A10)
+
+AVERAGE
+Calculates the average.
+Example: =AVERAGE(A1:A10)
+
+COUNT
+Counts cells containing numbers.
+Example: =COUNT(A1:A10)
+
+COUNTA
+Counts non-empty cells.
+Example: =COUNTA(A1:A10)
+
+MIN
+Returns the smallest value.
+Example: =MIN(A1:A10)
+
+MAX
+Returns the largest value.
+Example: =MAX(A1:A10)`
+},
+{
+title:"Logical Formulas",
+level:"Intermediate",
+desc:"Learn IF, IFS, AND, OR and IFERROR.",
+content:`LOGICAL FORMULAS
+
+IF
+Checks a condition and returns one result if TRUE and another if FALSE.
+Example: =IF(A2>=50,"Pass","Fail")
+
+IFS
+Checks multiple conditions.
+Example: =IFS(A2>=90,"A",A2>=75,"B",A2>=50,"C")
+
+AND
+Returns TRUE when all conditions are true.
+Example: =AND(A2>50,B2>50)
+
+OR
+Returns TRUE when at least one condition is true.
+Example: =OR(A2>50,B2>50)
+
+IFERROR
+Returns an alternative result if a formula produces an error.
+Example: =IFERROR(A2/B2,0)`
+},
+{
+title:"Lookup Formulas",
+level:"Advanced",
+desc:"Learn VLOOKUP, XLOOKUP, INDEX, MATCH and HLOOKUP.",
+content:`LOOKUP FORMULAS
+
+VLOOKUP
+Searches the first column of a table.
+Example: =VLOOKUP(E2,A2:C10,3,FALSE)
+
+HLOOKUP
+Searches the first row of a table.
+Example: =HLOOKUP(B1,A1:F5,3,FALSE)
+
+XLOOKUP
+Searches a range and returns a matching result.
+Example: =XLOOKUP(E2,A2:A10,C2:C10,"Not Found")
+
+INDEX
+Returns a value at a specified position.
+Example: =INDEX(A2:C10,2,3)
+
+MATCH
+Returns the position of a matching value.
+Example: =MATCH(E2,A2:A10,0)`
+},
+{
+title:"Text Formulas",
+level:"Intermediate",
+desc:"Clean and manipulate text using Excel functions.",
+content:`TEXT FORMULAS
+
+LEFT
+Returns characters from the left.
+Example: =LEFT(A2,3)
+
+RIGHT
+Returns characters from the right.
+Example: =RIGHT(A2,4)
+
+MID
+Extracts characters from the middle.
+Example: =MID(A2,2,5)
+
+TRIM
+Removes extra spaces.
+Example: =TRIM(A2)
+
+UPPER
+Converts text to uppercase.
+Example: =UPPER(A2)
+
+LOWER
+Converts text to lowercase.
+Example: =LOWER(A2)
+
+TEXT
+Formats a value as text.
+Example: =TEXT(A2,"dd-mm-yyyy")`
+},
+{
+title:"Date Formulas",
+level:"Intermediate",
+desc:"Work with dates, time and reporting periods.",
+content:`DATE AND TIME FORMULAS
+
+TODAY
+Returns the current date.
+Example: =TODAY()
+
+NOW
+Returns current date and time.
+Example: =NOW()
+
+DAY
+Returns the day number.
+Example: =DAY(A2)
+
+MONTH
+Returns the month number.
+Example: =MONTH(A2)
+
+YEAR
+Returns the year.
+Example: =YEAR(A2)
+
+EOMONTH
+Returns the last day of a month.
+Example: =EOMONTH(A2,0)
+
+DATEDIF
+Calculates the difference between dates.
+Example: =DATEDIF(A2,B2,"Y")`
+},
+{
+title:"Advanced Excel",
+level:"Advanced",
+desc:"Learn dynamic arrays, FILTER, SORT and UNIQUE.",
+content:`ADVANCED EXCEL
+
+FILTER
+Filters data based on a condition.
+Example: =FILTER(A2:C100,C2:C100="Completed")
+
+SORT
+Sorts a range.
+Example: =SORT(A2:C100,2,1)
+
+UNIQUE
+Returns unique values.
+Example: =UNIQUE(A2:A100)
+
+SEQUENCE
+Generates a sequence of numbers.
+Example: =SEQUENCE(10)
+
+Dynamic Arrays
+Dynamic array formulas can return multiple results that spill
+into neighbouring cells.
+
+Note: These functions require a compatible version of Excel.`
+},
+{
+title:"Data Analysis",
+level:"Advanced",
+desc:"Learn PivotTables, charts, reports and dashboards.",
+content:`DATA ANALYSIS IN EXCEL
+
+PivotTables
+Summarise large datasets quickly.
+You can group, count, sum and compare data.
+
+Charts
+Visualise data using:
+- Column charts
+- Bar charts
+- Line charts
+- Pie charts
+- Combo charts
+
+Dashboards
+A dashboard is a visual summary of important business metrics.
+
+Useful dashboard elements:
+- KPI cards
+- PivotTables
+- Charts
+- Slicers
+- Conditional formatting
+
+Data Cleaning
+Remove duplicates, correct formats, handle blanks and validate data.`
+},
+{
+title:"Excel Automation",
+level:"Advanced",
+desc:"Learn VBA, macros and Power Query.",
+content:`EXCEL AUTOMATION
+
+Macros
+A macro records or automates repetitive tasks.
+
+VBA
+Visual Basic for Applications is used to automate Excel tasks.
+
+Example VBA code:
+
+Sub HelloExcel()
+    MsgBox "Welcome to ExcelPath!"
+End Sub
+
+Power Query
+Power Query helps import, clean, transform and combine data.
+
+Common uses:
+- Combine multiple files
+- Remove unwanted columns
+- Change data types
+- Clean inconsistent values
+- Refresh reports
+
+This website teaches automation concepts. It does not execute VBA.`
+},
+{
+title:"Interview Preparation",
+level:"All Levels",
+desc:"Practise common Excel interview questions and tasks.",
+content:`EXCEL INTERVIEW PREPARATION
+
+1. What is a PivotTable?
+A tool used to summarise and analyse large datasets.
+
+2. What is VLOOKUP?
+A function that searches for a value in the first column of a table.
+
+3. Difference between COUNT and COUNTA?
+COUNT counts numeric cells. COUNTA counts non-empty cells.
+
+4. What is conditional formatting?
+It formats cells based on specified conditions.
+
+5. What is a dashboard?
+A visual report showing important business information.
+
+6. What is Power Query?
+A tool for importing and transforming data.
+
+Practise these topics with real datasets and examples.`
+}
+];
+
+function renderCourses(){
+ const grid=document.getElementById("courseGrid");
+ grid.innerHTML=courses.map((c,i)=>`
+ <div class="card">
+  <span class="badge">${c.level}</span>
+  <h3>${i+1}. ${c.title}</h3>
+  <p>${c.desc}</p>
+  <button class="primary" onclick="openLesson(${i})">Start Lesson →</button>
+ </div>`).join("");
+}
+
+function openLesson(index){
+ document.getElementById("lessonPanel").style.display="block";
+ document.getElementById("lessonContent").innerHTML=
+ `<h2 style="margin:20px 0">${courses[index].title}</h2>
+ <p style="white-space:pre-wrap">${courses[index].content}</p>`;
+ document.getElementById("lessonPanel").scrollIntoView({behavior:"smooth"});
+}
+
+function closeLesson(){
+ document.getElementById("lessonPanel").style.display="none";
+}
+
+// ===============================
+// 2. FORMULA LIBRARY
+// ===============================
+
+const formulas=[
+["SUM","=SUM(A1:A10)","Adds numbers in a range.","Math"],
+["AVERAGE","=AVERAGE(A1:A10)","Returns the average.","Math"],
+["COUNT","=COUNT(A1:A10)","Counts numeric cells.","Math"],
+["COUNTA","=COUNTA(A1:A10)","Counts non-empty cells.","Math"],
+["MIN","=MIN(A1:A10)","Returns the smallest value.","Math"],
+["MAX","=MAX(A1:A10)","Returns the largest value.","Math"],
+["PRODUCT","=PRODUCT(A1:A5)","Multiplies numbers.","Math"],
+["ROUND","=ROUND(A1,2)","Rounds a number.","Math"],
+["IF","=IF(A2>=50,\"Pass\",\"Fail\")","Checks a condition.","Logical"],
+["IFS","=IFS(A2>=90,\"A\",A2>=50,\"B\",TRUE,\"C\")","Checks multiple conditions.","Logical"],
+["AND","=AND(A2>10,B2>10)","TRUE when all conditions are true.","Logical"],
+["OR","=OR(A2>10,B2>10)","TRUE when any condition is true.","Logical"],
+["IFERROR","=IFERROR(A2/B2,0)","Handles formula errors.","Logical"],
+["VLOOKUP","=VLOOKUP(E2,A2:C10,3,FALSE)","Looks up data vertically.","Lookup"],
+["HLOOKUP","=HLOOKUP(B1,A1:F5,3,FALSE)","Looks up data horizontally.","Lookup"],
+["XLOOKUP","=XLOOKUP(E2,A2:A10,C2:C10,\"Not Found\")","Modern lookup function.","Lookup"],
+["INDEX","=INDEX(A2:C10,2,3)","Returns a value by position.","Lookup"],
+["MATCH","=MATCH(E2,A2:A10,0)","Returns a matching position.","Lookup"],
+["LEFT","=LEFT(A2,3)","Extracts characters from the left.","Text"],
+["RIGHT","=RIGHT(A2,4)","Extracts characters from the right.","Text"],
+["MID","=MID(A2,2,5)","Extracts text from the middle.","Text"],
+["TRIM","=TRIM(A2)","Removes extra spaces.","Text"],
+["LEN","=LEN(A2)","Counts characters.","Text"],
+["CONCAT","=CONCAT(A2,B2)","Joins text values.","Text"],
+["TEXT","=TEXT(A2,\"dd-mm-yyyy\")","Formats a value as text.","Text"],
+["TODAY","=TODAY()","Returns the current date.","Date"],
+["NOW","=NOW()","Returns date and time.","Date"],
+["YEAR","=YEAR(A2)","Extracts the year.","Date"],
+["MONTH","=MONTH(A2)","Extracts the month.","Date"],
+["EOMONTH","=EOMONTH(A2,0)","Returns the last day of a month.","Date"],
+["FILTER","=FILTER(A2:C100,C2:C100=\"Completed\")","Filters a data range.","Advanced"],
+["SORT","=SORT(A2:C100,2,1)","Sorts a data range.","Advanced"],
+["UNIQUE","=UNIQUE(A2:A100)","Returns unique values.","Advanced"],
+["SEQUENCE","=SEQUENCE(10)","Generates a sequence.","Advanced"]
+];
+
+function renderFormulas(){
+ const q=document.getElementById("formulaSearch").value.toLowerCase();
+ const result=formulas.filter(f=>f.join(" ").toLowerCase().includes(q));
+ document.getElementById("formulaList").innerHTML=result.length?
+ result.map(f=>`
+ <div class="formula-item">
+  <h3>${f[0]} <span class="badge">${f[3]}</span></h3>
+  <p>${f[2]}</p>
+  <p><code>${f[1]}</code>
+  <button class="secondary" onclick="copyFormula('${f[1].replace(/'/g,"\\'")}')">Copy</button></p>
+ </div>`).join("")
+ :"<p>No matching formula found.</p>";
+}
+
+function copyFormula(value){
+ navigator.clipboard.writeText(value)
+ .then(()=>alert("Formula copied!"))
+ .catch(()=>alert("Copy not available. Please copy the formula manually."));
+}
+
+// ===============================
+// 3. INTERACTIVE PRACTICE SHEET
+// ===============================
+
+const initialData=[
+ ["120","200","320"],
+ ["150","250","400"],
+ ["100","300","400"],
+ ["180","220","400"],
+ ["250","150","400"]
+];
+
+function renderSheet(){
+ const body=document.getElementById("sheetBody");
+ body.innerHTML=initialData.map((row,r)=>`
+ <tr>
+  <th>${r+1}</th>
+  ${row.map((value,c)=>`
+   <td><input id="${String.fromCharCode(65+c)}${r+1}"
+   value="${value}" aria-label="Cell ${String.fromCharCode(65+c)}${r+1}"></td>
+  `).join("")}
+ </tr>`).join("");
+}
+
+function getCell(ref){
+ const match=ref.match(/^([A-C])([1-5])$/i);
+ if(!match)throw Error("Invalid cell reference: "+ref);
+ const value=document.getElementById(ref.toUpperCase()).value.trim();
+ if(value==="")return 0;
+ const n=Number(value);
+ if(!Number.isFinite(n))throw Error(ref+" is not a number.");
+ return n;
+}
+
+function getRange(ref){
+ const parts=ref.split(":");
+ if(parts.length!==2)throw Error("Invalid range.");
+ const start=parts[0].match(/^([A-C])([1-5])$/i);
+ const end=parts[1].match(/^([A-C])([1-5])$/i);
+ if(!start||!end)throw Error("Invalid range reference.");
+ const c1=start[1].toUpperCase().charCodeAt(0)-65;
+ const c2=end[1].toUpperCase().charCodeAt(0)-65;
+ const r1=Number(start[2]),r2=Number(end[2]);
+ if(c1>c2||r1>r2)throw Error("Please use a range from top-left to bottom-right.");
+ const values=[];
+ for(let r=r1;r<=r2;r++){
+  for(let c=c1;c<=c2;c++){
+   values.push(getCell(String.fromCharCode(65+c)+r));
+  }
+ }
+ return values;
+}
+
+// Small arithmetic parser: supports +, -, *, / and parentheses.
+function arithmetic(expression){
+ const tokens=expression.match(/\d+(?:\.\d+)?|[()+\-*/]/g);
+ if(!tokens||tokens.join("")!==expression.replace(/\s/g,""))
+  throw Error("Unsupported formula syntax.");
+ let pos=0;
+ function factor(){
+  const t=tokens[pos++];
+  if(t==="+")return factor();
+  if(t==="-")return -factor();
+  if(t==="("){
+   const v=expr();
+   if(tokens[pos++]!==")")throw Error("Missing closing bracket.");
+   return v;
+  }
+  const n=Number(t);
+  if(!Number.isFinite(n))throw Error("Invalid number.");
+  return n;
+ }
+ function term(){
+  let v=factor();
+  while(tokens[pos]==="*"||tokens[pos]==="/"){
+   const op=tokens[pos++];
+   const n=factor();
+   v=op==="*"?v*n:v/n;
+  }
+  return v;
+ }
+ function expr(){
+  let v=term();
+  while(tokens[pos]==="+"||tokens[pos]==="-"){
+   const op=tokens[pos++];
+   const n=term();
+   v=op==="+"?v+n:v-n;
+  }
+  return v;
+ }
+ const result=expr();
+ if(pos!==tokens.length)throw Error("Invalid formula.");
+ if(!Number.isFinite(result))throw Error("Invalid calculation.");
+ return result;
+}
+
+function calculateFormula(){
+ try{
+  let formula=document.getElementById("formulaInput").value.trim().toUpperCase();
+  if(!formula.startsWith("="))throw Error("Start your formula with =");
+  let result;
+  const fn=formula.match(/^=(SUM|AVERAGE|COUNT|MIN|MAX)\(([A-C][1-5]:[A-C][1-5])\)$/);
+  if(fn){
+   const values=getRange(fn[2]);
+   switch(fn[1]){
+    case "SUM":result=values.reduce((a,b)=>a+b,0);break;
+    case "AVERAGE":result=values.length?values.reduce((a,b)=>a+b,0)/values.length:0;break;
+    case "COUNT":result=values.length;break;
+    case "MIN":result=Math.min(...values);break;
+    case "MAX":result=Math.max(...values);break;
+   }
+  }else{
+   let expression=formula.slice(1);
+   expression=expression.replace(/\b([A-C][1-5])\b/gi,ref=>getCell(ref));
+   result=arithmetic(expression);
+  }
+  document.getElementById("formulaResult").textContent="Result: "+result;
+ }catch(error){
+  document.getElementById("formulaResult").textContent="Error: "+error.message;
+ }
+}
+
+function resetSheet(){
+ renderSheet();
+ document.getElementById("formulaInput").value="";
+ document.getElementById("formulaResult").textContent="Sheet reset.";
+}
+
+// ===============================
+// 4. EXCEL QUIZ
+// ===============================
+
+const questions=[
+{
+q:"Which formula adds numbers in Excel?",
+o:["COUNT","SUM","IF","MAX"],a:1
+},
+{
+q:"Which function calculates an average?",
+o:["AVERAGE","MIN","LEFT","COUNT"],a:0
+},
+{
+q:"Which function checks a condition?",
+o:["SUM","IF","TRIM","MAX"],a:1
+},
+{
+q:"Which function counts numeric cells?",
+o:["COUNTA","COUNT","SUM","LEN"],a:1
+},
+{
+q:"Which function removes extra spaces?",
+o:["LEFT","RIGHT","TRIM","MID"],a:2
+},
+{
+q:"Which tool summarises large datasets?",
+o:["WordArt","PivotTable","Spell Check","Format Painter"],a:1
+},
+{
+q:"Which function returns the current date?",
+o:["NOW","TODAY","YEAR","DATEVALUE"],a:1
+},
+{
+q:"Which is a modern lookup function?",
+o:["XLOOKUP","SUM","TRIM","ROUND"],a:0
+},
+{
+q:"What does Ctrl + Z do?",
+o:["Save","Copy","Undo","Paste"],a:2
+},
+{
+q:"Which tool is used for data transformation?",
+o:["Power Query","Paint","Word","Notepad"],a:0
+}
+];
+
+function renderQuiz(){
+ const area=document.getElementById("quizArea");
+ area.innerHTML=questions.map((q,i)=>`
+ <div class="question">
+  <h3>${i+1}. ${q.q}</h3>
+  ${q.o.map((option,j)=>`
+   <label class="quiz-option">
+    <input type="radio" name="q${i}" value="${j}">
+    ${option}
+   </label>`).join("")}
+ </div>`).join("")+
+ `<button class="primary" onclick="checkQuiz()">Submit Answers</button>
+ <div class="result" id="quizResult"></div>`;
+}
+
+function checkQuiz(){
+ let score=0,answered=0;
+ questions.forEach((q,i)=>{
+  const selected=document.querySelector('input[name="q'+i+'"]:checked');
+  if(selected){
+   answered++;
+   if(Number(selected.value)===q.a)score++;
+  }
+ });
+ document.getElementById("quizResult").textContent=
+ `You answered ${answered} of ${questions.length} questions. Your score: ${score}/${questions.length}.`;
+}
+
+// ===============================
+// 5. INTERVIEW QUESTIONS
+// ===============================
+
+const interview=[
+["What is Microsoft Excel?","Excel is a spreadsheet application used to organise, calculate, analyse and visualise data."],
+["What is a PivotTable?","A PivotTable summarises and analyses large amounts of data."],
+["Difference between COUNT and COUNTA?","COUNT counts numeric cells. COUNTA counts all non-empty cells."],
+["What is VLOOKUP?","VLOOKUP searches for a value in the first column of a table and returns a value from another column."],
+["What is conditional formatting?","It automatically changes cell formatting based on specified rules."],
+["What is a workbook?","A workbook is an Excel file that can contain multiple worksheets."],
+["What is a cell reference?","A cell reference identifies a cell using its column letter and row number, such as A1."],
+["What is Power Query?","Power Query is used to import, clean, transform and combine data."],
+["What is a dashboard?","A dashboard is a visual report showing important metrics and business performance."],
+["What is the difference between relative and absolute references?","A relative reference changes when copied. An absolute reference, such as $A$1, remains fixed."]
+];
+
+function renderInterview(){
+ document.getElementById("interviewArea").innerHTML=interview.map((item,i)=>`
+ <details style="padding:14px;border-bottom:1px solid var(--border)">
+  <summary style="cursor:pointer;font-weight:bold">${i+1}. ${item[0]}</summary>
+  <p style="margin-top:10px;color:var(--muted)">${item[1]}</p>
+ </details>`).join("");
+}
+
+// ===============================
+// 6. DOWNLOAD PRACTICE DATASET
+// ===============================
+
+function downloadDataset(){
+ const rows=[
+ ["Employee","Product","Quantity","Price","Sales"],
+ ["Rahul","Laptop",2,45000,90000],
+ ["Priya","Mouse",10,500,5000],
+ ["Amit","Keyboard",5,1200,6000],
+ ["Neha","Monitor",3,12000,36000],
+ ["Ravi","Laptop",1,45000,45000],
+ ["Anita","Mouse",8,500,4000],
+ ["Kiran","Keyboard",4,1200,4800],
+ ["Suman","Monitor",2,12000,24000]
+ ];
+ const csv=rows.map(row=>row.join(",")).join("\n");
+ const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"});
+ const url=URL.createObjectURL(blob);
+ const link=document.createElement("a");
+ link.href=url;
+ link.download="ExcelPath_Practice_Dataset.csv";
+ link.click();
+ URL.revokeObjectURL(url);
+}
+
+// ===============================
+// 7. DARK MODE
+// ===============================
+
+function toggleDark(){
+ document.body.classList.toggle("dark");
+}
+
+// ===============================
+// INITIALISE WEBSITE
+// ===============================
+
+renderCourses();
+renderFormulas();
+renderSheet();
+renderQuiz();
+renderInterview();
+</script>
+
+</body>
+</html>
